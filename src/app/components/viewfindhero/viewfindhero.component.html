@@ -1,0 +1,15 @@
+<h1>Buscando : <small> {{ findText }} </small></h1>
+
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length < 1">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existeresultados con el valor : {{ findText }}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <app-heroe-targeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes; "></app-heroe-targeta>
+</div>
