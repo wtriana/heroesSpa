@@ -7,16 +7,23 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroeComponent } from './components/heroe/heroe.component';
+import { ViewfindheroComponent } from './components/viewfindhero/viewfindhero.component';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { FormHeroeComponent } from './components/form-heroe/form-heroe.component';
 
 //RUTAS
 import { APP_ROUTING } from './app.routes';
 
 //SERVICIOS
 import { HeroesService } from "./services/heroes.services";
-import { HeroeComponent } from './components/heroe/heroe.component';
-import { ViewfindheroComponent } from './components/viewfindhero/viewfindhero.component';
-import { HeroeTargetaComponent } from './components/heroe-targeta/heroe-targeta.component';
 
+//OTROS COMPONENTES
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { AuxiliarComponent } from './components/auxiliar/auxiliar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,11 +34,18 @@ import { HeroeTargetaComponent } from './components/heroe-targeta/heroe-targeta.
     HeroesComponent,
     HeroeComponent,
     ViewfindheroComponent,
-    HeroeTargetaComponent
+    HeroeTarjetaComponent,
+    FormHeroeComponent,
+    AuxiliarComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     HeroesService

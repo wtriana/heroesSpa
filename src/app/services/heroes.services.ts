@@ -56,7 +56,7 @@ export class HeroesService {
     {
       nombre: "Wolverine",
       bio: "este wolverine es una makda que quien encontrar.",
-      img: "assets/img/wolverine.png",
+      img: "assets/img/no-disponible.png",
       aparicion: "1974-11-01",
       casa: "Marvel"
     }

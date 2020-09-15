@@ -12,10 +12,4 @@
     font-weight: 300;
     text-align: center;
     color: #ffffff;
-    margin: -16px;
 }
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container textarea[type="message"],
-{}

@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { ViewfindheroComponent } from "./components/viewfindhero/viewfindhero.component";
+import { FormHeroeComponent } from './components/form-heroe/form-heroe.component';
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const ROUTES: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroe/:id', component: HeroeComponent },
   { path: 'buscar/:findText', component: ViewfindheroComponent },
+  { path: 'crear', component: FormHeroeComponent },
   { path: '**', pathMatch:'full', redirectTo: 'home' }
 ];
 
