@@ -10,6 +10,7 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() index:number;
   @Output() heroeSeleccionado:EventEmitter<number>;
 
+  path :string = "assets/img/";
   constructor( private router:Router) {
     this.heroeSeleccionado = new EventEmitter();
   }
@@ -21,5 +22,4 @@ export class HeroeTarjetaComponent implements OnInit {
     //console.log(this.index);
     //this.heroeSeleccionado.emit(this.index);
   }
-
 }

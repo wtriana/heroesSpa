@@ -21,7 +21,7 @@ import { HeroesService } from "./services/heroes.services";
 //OTROS COMPONENTES
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatMomentDateModule , MAT_MOMENT_DATE_ADAPTER_OPTIONS  } from '@angular/material-moment-adapter';
 import { AuxiliarComponent } from './components/auxiliar/auxiliar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -45,10 +45,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatMomentDateModule,
     ReactiveFormsModule
-
   ],
   providers: [
-    HeroesService
+    HeroesService,
+    {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
   ],
   bootstrap: [AppComponent]
 })

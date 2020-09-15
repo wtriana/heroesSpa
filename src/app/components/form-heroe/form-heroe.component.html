@@ -3,25 +3,25 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSaveForm">
         <div class="form-group">
             <label for="formGroupExampleInput">Nombre Heroe</label>
-            <input formControlName="nameHero" type="text" class="form-control" placeholder="Nombre Heroe">
+            <input formControlName="name" type="text" class="form-control" placeholder="Nombre Heroe">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput">Fecha Aparición</label>
             <br>
-            <input formControlName="dateHero" class="form-control" matInput [matDatepicker]="picker" style="display:inline; width: 50%;" readonly placeholder="Fecha Aparición">
+            <input formControlName="release" class="form-control" matInput [matDatepicker]="picker" style="display:inline; width: 50%;" readonly placeholder="Fecha Aparición">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Casa</label>
-            <select formControlName="houseHero" class="form-control">
+            <select formControlName="familyId" class="form-control">
             <option value="Marvel">Marvel</option>
             <option value="DC">DC</option>
           </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Biografia</label>
-            <textarea formControlName="bioHero" class="form-control" rows="3"></textarea>
+            <textarea formControlName="bio" class="form-control" rows="3"></textarea>
         </div>
         <!-- <div class="form-group">
             <label for="exampleFormControlFile1">Seleccione imagen del Heroe</label>

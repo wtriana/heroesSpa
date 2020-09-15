@@ -9,11 +9,13 @@ import {  FormGroup, FormControl } from "@angular/forms";
 export class FormHeroeComponent {
 
   profileForm = new FormGroup({
-    nameHero: new FormControl(''),
-    dateHero: new FormControl(''),
-    houseHero: new FormControl(''),
-    bioHero: new FormControl(''),
+    name: new FormControl(''),
+    release: new FormControl(''),
+    familyId: new FormControl(''),
+    bio: new FormControl(''),
   });
+
+  newHero:any = {};
 
   constructor() { }
 
@@ -22,7 +24,14 @@ export class FormHeroeComponent {
   }
 
   onSaveForm(){
-    console.log(this.profileForm.value);
+    this.newHero = this.profileForm.value;
+    this.newHero.image = "no-disponible.png";
+    if (this.newHero.release) {
+      this.newHero.release = this.newHero.release.format('YYYY-MM-DD');
+    } else {
+      this.newHero.release = "1900-01-01";
+    }
+    console.log(this.newHero);
   }
 
 }
