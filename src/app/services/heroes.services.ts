@@ -54,10 +54,17 @@ export class HeroesService {
       familyId: "Marvel"
     },
     {
-      name: "Wolverine",
-      bio: "este wolverine es una makda que quien encontrar.",
+      name: "Iron Man",
+      bio: "Fue uno de los héroes de Marvel que inició la revolución en el mundo de los cómics. Junto a Ant-Man (El Hombre Hormiga), El Poderoso Thor, La Avispa y El Increíble Hulk, fundó Los Vengadores, erigiéndose como un icono de Marvel.",
+      image: "iron_man.png",
+      release: "1970-11-01",
+      familyId: "Marvel"
+    },
+    {
+      name: "Ant-Man",
+      bio: "Scott Lang fue el primer personaje legado del MCU, pues a pesar de que su debut se dio tras los eventos de Age of Ultron, durante la película descubrimos que ya había existido un Hombre Hormiga en la figura de Hank Pym.La idea de poner al segundo Ant-Man dentro del MCU se criticó durante mucho tiempo, para fortuna de todo el mundo el resultado no fue un problema para los lectores e incluso se tomó como punto de partida para nuevas historias de Lang y Pym en los cómics.",
       image: "no-disponible.png",
-      release: "1974-11-01",
+      release: "1970-11-01",
       familyId: "Marvel"
     }
   ];
