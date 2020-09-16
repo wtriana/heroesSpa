@@ -14,7 +14,6 @@ export class HeroesComponent implements OnInit {
               private _heroesService:HeroesService,
               private router:Router
     ) {
-    // console.log("iniciando constructor...");
   }
 
   ngOnInit(){

@@ -19,9 +19,19 @@ export class ViewfindheroComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(llenganParams =>{
       this.findText = llenganParams['findText'];
-      console.log("llegas esto=>" + this.findText);
-      this.heroes = this._heroesService.buscarHeroes(llenganParams['findText']);
-      console.log(this.heroes);
+      this.findText = this.findText.toUpperCase();
+      //this.heroes
+      this._heroesService.buscarHeroes(llenganParams['findText']).subscribe((data:any) => {
+        let heroesArray:Heroe[] = [];
+        for (const hero of data) {
+          let name: any = hero.name.toUpperCase();
+          if (name.indexOf(this.findText) >= 0) {
+            heroesArray.push(hero);
+          }
+        }
+        this.heroes = heroesArray;
+        console.log(this.heroes);
+      });
     })
   }
 }

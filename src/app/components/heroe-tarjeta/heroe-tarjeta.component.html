@@ -5,13 +5,13 @@
         <p class="card-text ">{{ heroe.bio }}</p>
         <p class="card-text "><small class="text-muted ">{{ heroe.release }}</small></p>
         <button (click)="verHeroe()" type="button " class="btn btn-primary btn-block ">
-        ver mas... <span class="badge badge-light">{{ index }}</span>
+        ver mas... <span class="badge badge-light">{{ heroe.id }}</span>
       </button>
 
         <!-- redireccionamiento con link -->
         <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary btn-block ">
         ver mas link...
-      </a> -->
+        </a> -->
 
     </div>
 </div>
