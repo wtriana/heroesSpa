@@ -29,6 +29,13 @@ export class HeroesService {
     return this.getHeroes();
   }
 
+  saveHero(newHero){
+    const headers = new HttpHeaders({});
+    //console.log("salvar heroe");
+    //console.log(newHero);
+    return this.http.post(this.urlService, newHero ,{ headers });
+  }
+
 }
 
 export interface Heroe {
