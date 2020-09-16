@@ -24,6 +24,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule , MAT_MOMENT_DATE_ADAPTER_OPTIONS  } from '@angular/material-moment-adapter';
 import { AuxiliarComponent } from './components/auxiliar/auxiliar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     HeroesService,

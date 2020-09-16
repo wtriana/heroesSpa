@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HeroesService {
 
   private dataHeroes:Heroe[] = [
@@ -53,28 +57,18 @@ export class HeroesService {
       release: "1974-11-01",
       familyId: "Marvel"
     },
-    {
-      name: "Iron Man",
-      bio: "Fue uno de los héroes de Marvel que inició la revolución en el mundo de los cómics. Junto a Ant-Man (El Hombre Hormiga), El Poderoso Thor, La Avispa y El Increíble Hulk, fundó Los Vengadores, erigiéndose como un icono de Marvel.",
-      image: "iron_man.png",
-      release: "1970-11-01",
-      familyId: "Marvel"
-    },
-    {
-      name: "Ant-Man",
-      bio: "Scott Lang fue el primer personaje legado del MCU, pues a pesar de que su debut se dio tras los eventos de Age of Ultron, durante la película descubrimos que ya había existido un Hombre Hormiga en la figura de Hank Pym.La idea de poner al segundo Ant-Man dentro del MCU se criticó durante mucho tiempo, para fortuna de todo el mundo el resultado no fue un problema para los lectores e incluso se tomó como punto de partida para nuevas historias de Lang y Pym en los cómics.",
-      image: "no-disponible.png",
-      release: "1970-11-01",
-      familyId: "Marvel"
-    }
   ];
 
-  constructor() {
-    console.log('service listo para usarser');
+  urlService :string = 'http://localhost:8081/hero/';
+
+  constructor(private http: HttpClient) {
+    console.log('service listo para usarser y ahora con el cliente');
   }
 
-  getHeroes():Heroe[] {
-    return this.dataHeroes;
+  getHeroes(){
+    const headers = new HttpHeaders({});
+    return this.http.get(this.urlService, { headers });
+
   }
 
   getHeroe(idx:number) {
@@ -90,7 +84,7 @@ export class HeroesService {
       let heroe = this.dataHeroes[i];
       let name = heroe.name.toUpperCase();
       if (name.indexOf(findText) >= 0) {
-        heroe.idx = i;
+        heroe.id = i;
         heroesArray.push(heroe);
       }
     }
@@ -105,5 +99,5 @@ export interface Heroe {
   image   : string;
   release : string;
   familyId: string;
-  idx?:     number
+  id?     : number
 }
